@@ -1,0 +1,21 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+plugins {
+    id "org.jetbrains.intellij" version "0.4.8"
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+intellij {
+    version 'IC-2019.1.1' //IntelliJ IDEA 2016.3 dependency; for a full list of IntelliJ IDEA releases please see https://www.jetbrains.com/intellij-repository/releases
+    plugins 'coverage' //Bundled plugin dependencies
+    pluginName 'common-enum-values'
+}
+
+group 'com.grodas'
+version "$version" // Plugin version
