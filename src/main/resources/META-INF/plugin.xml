@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.grodas.common-enum-values</id>
     <name>Common enum values</name>
-    <version>0.0.1</version>
+    <version>0.1.0</version>
     <vendor email="grodas.p35@gmail.com" url="http://zhukov.zzz.com.ua">P35</vendor>
 
     <description><![CDATA[
@@ -15,12 +15,6 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
+        <liveTemplateMacro implementation="DevelopersMacro" />
     </extensions>
-
-    <actions>
-        <group id="MyPlugin.SampleMenu" text="Greeting" description="Greeting menu">
-            <add-to-group group-id="MainMenu" anchor="last"/>
-            <action id="Myplugin.Textboxes" class="HelloAction" text="Hello" description="Says hello"/>
-        </group>
-    </actions>
 </idea-plugin>
