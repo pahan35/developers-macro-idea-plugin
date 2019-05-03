@@ -1,6 +1,10 @@
 buildscript {
     repositories {
+        maven { url 'http://dl.bintray.com/jetbrains/intellij-plugin-service' }
         mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 }
 
@@ -10,11 +14,22 @@ plugins {
 
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'kotlin'
 
 intellij {
     version 'IC-2019.1.1' //IntelliJ IDEA 2016.3 dependency; for a full list of IntelliJ IDEA releases please see https://www.jetbrains.com/intellij-repository/releases
     plugins 'coverage' //Bundled plugin dependencies
     pluginName 'common-enum-values'
+}
+
+sourceSets {
+    main.kotlin.srcDirs += 'src/main/java'
+    test.kotlin.srcDirs += 'src/test/java'
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    testCompile "org.testng:testng:6.8.5"
 }
 
 group 'com.grodas'

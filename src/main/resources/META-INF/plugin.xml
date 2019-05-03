@@ -15,6 +15,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
+        <applicationConfigurable implementation="ConfigEntry" />
         <liveTemplateMacro implementation="DevelopersMacro" />
     </extensions>
 </idea-plugin>
