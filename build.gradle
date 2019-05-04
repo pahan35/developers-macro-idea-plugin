@@ -1,36 +1,39 @@
-buildscript {
-    repositories {
-        maven { url 'http://dl.bintray.com/jetbrains/intellij-plugin-service' }
-        mavenCentral()
-    }
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-    }
-}
-
 plugins {
-    id "org.jetbrains.intellij" version "0.4.8"
-}
-
-apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'kotlin'
-
-intellij {
-    version 'IC-2019.1.1' //IntelliJ IDEA 2016.3 dependency; for a full list of IntelliJ IDEA releases please see https://www.jetbrains.com/intellij-repository/releases
-    plugins 'coverage' //Bundled plugin dependencies
-    pluginName 'common-enum-values'
-}
-
-sourceSets {
-    main.kotlin.srcDirs += 'src/main/java'
-    test.kotlin.srcDirs += 'src/test/java'
-}
-
-dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
-    testCompile "org.testng:testng:6.8.5"
+    id 'groovy'
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.4.8'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.31'
 }
 
 group 'com.grodas'
 version "$version" // Plugin version
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2019.1.1' //IntelliJ IDEA 2016.3 dependency; for a full list of IntelliJ IDEA releases please see https://www.jetbrains.com/intellij-repository/releases
+    plugins 'coverage' //Bundled plugin dependencies
+    pluginName 'common-enum-values'
+}
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+patchPluginXml {
+    changeNotes """
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>"""
+}
