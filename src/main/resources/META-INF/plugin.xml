@@ -15,7 +15,8 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
-        <applicationConfigurable implementation="ConfigEntry" />
+        <applicationService serviceImplementation="ConfigService" />
+        <applicationConfigurable instance="ConfigEntry" />
         <liveTemplateMacro implementation="DevelopersMacro" />
     </extensions>
 </idea-plugin>
