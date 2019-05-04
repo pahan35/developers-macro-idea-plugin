@@ -22,7 +22,7 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version '2019.1.1' //IntelliJ IDEA 2016.3 dependency; for a full list of IntelliJ IDEA releases please see https://www.jetbrains.com/intellij-repository/releases
+    version 'IC-LATEST-EAP-SNAPSHOT'
     plugins 'coverage' //Bundled plugin dependencies
     pluginName 'common-enum-values'
 }
