@@ -8,6 +8,8 @@ import com.intellij.codeInsight.template.macro.EnumMacro;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+
 public class DevelopersMacro extends EnumMacro {
     @Override
     public String getName() {
@@ -22,12 +24,12 @@ public class DevelopersMacro extends EnumMacro {
     @Nullable
     @Override
     public LookupElement[] calculateLookupItems(@NotNull Expression[] params, ExpressionContext context) {
-        LookupElementBuilder[] developers = new LookupElementBuilder[5];
-        developers[0] = LookupElementBuilder.create("pavlo");
-        developers[1] = LookupElementBuilder.create("oksana");
-        developers[2] = LookupElementBuilder.create("dmytro");
-        developers[3] = LookupElementBuilder.create("dylan");
-        developers[4] = LookupElementBuilder.create("david");
-        return developers;
+        ArrayList<LookupElementBuilder> developers = new ArrayList<>();
+        String[] devNames = new String[]{"pavlo", "oksana", "dmytro", "dylan", "david"};
+        for (String devName : devNames) {
+            developers.add(LookupElementBuilder.create(devName));
+        }
+
+        return developers.toArray(new LookupElement[0]);
     }
 }
