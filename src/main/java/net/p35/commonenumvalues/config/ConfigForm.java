@@ -1,3 +1,5 @@
+package net.p35.commonenumvalues.config;
+
 import javax.swing.*;
 
 public class ConfigForm {
