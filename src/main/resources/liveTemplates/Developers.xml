@@ -1,0 +1,22 @@
+<templateSet group="Developers">
+    <template name="d"
+              value="[DEVELOPERS]"
+              description="Allow add extra developer in the comment"
+              toReformat="false"
+              toShortenFQNames="false">
+        <variable name="DEVELOPERS" expression="developers(...)" defaultValue="" alwaysStopAt="true"/>
+        <context>
+            <option name="OTHER" value="true" />
+        </context>
+    </template>
+    <template name="td"
+              value="// TODO([DEVELOPERS]): "
+              description="TODO with developers"
+              toReformat="false"
+              toShortenFQNames="false">
+        <variable name="DEVELOPERS" expression="developers(...)" defaultValue="" alwaysStopAt="true"/>
+        <context>
+            <option name="OTHER" value="true" />
+        </context>
+    </template>
+</templateSet>

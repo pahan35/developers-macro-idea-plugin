@@ -5,8 +5,8 @@
     <vendor email="grodas.p35@gmail.com" url="http://zhukov.zzz.com.ua">P35</vendor>
 
     <description><![CDATA[
-    Allow use common enum values in different.<br>
-    <em>most HTML tags may be used</em>
+    This plugin allows your to use macro developers() where you need your project developers enum.<br>
+    You can configure developers list under Developers section in IDE preferences.<br>
     ]]></description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
@@ -17,6 +17,7 @@
         <!-- Add your extensions here -->
         <applicationService serviceImplementation="net.p35.commonenumvalues.config.ConfigService" />
         <applicationConfigurable instance="net.p35.commonenumvalues.config.ConfigEntry" />
+        <defaultLiveTemplatesProvider implementation="net.p35.commonenumvalues.livetemplate.DevelopersTemplateProvider"/>
         <liveTemplateMacro implementation="net.p35.commonenumvalues.macro.DevelopersMacro" />
     </extensions>
 </idea-plugin>
