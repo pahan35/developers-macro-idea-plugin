@@ -1,4 +1,4 @@
-package net.p35.commonenumvalues.config;
+package net.p35.developersmacro.config;
 
 import javax.swing.*;
 

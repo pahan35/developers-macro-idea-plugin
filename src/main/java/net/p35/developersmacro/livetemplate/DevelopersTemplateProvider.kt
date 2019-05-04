@@ -1,4 +1,4 @@
-package net.p35.commonenumvalues.livetemplate
+package net.p35.developersmacro.livetemplate
 
 import com.intellij.codeInsight.template.impl.DefaultLiveTemplatesProvider
 

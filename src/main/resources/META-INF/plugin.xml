@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>net.p35.common-enum-values</id>
-    <name>Common enum values</name>
-    <version>0.1.0</version>
+    <name>Developers macro</name>
+    <version>0.2.0</version>
     <vendor email="grodas.p35@gmail.com" url="http://zhukov.zzz.com.ua">P35</vendor>
 
     <description><![CDATA[
@@ -15,9 +15,9 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
-        <applicationService serviceImplementation="net.p35.commonenumvalues.config.ConfigService" />
-        <applicationConfigurable instance="net.p35.commonenumvalues.config.ConfigEntry" />
-        <defaultLiveTemplatesProvider implementation="net.p35.commonenumvalues.livetemplate.DevelopersTemplateProvider"/>
-        <liveTemplateMacro implementation="net.p35.commonenumvalues.macro.DevelopersMacro" />
+        <applicationService serviceImplementation="net.p35.developersmacro.config.ConfigService" />
+        <applicationConfigurable instance="net.p35.developersmacro.config.ConfigEntry" />
+        <defaultLiveTemplatesProvider implementation="net.p35.developersmacro.livetemplate.DevelopersTemplateProvider"/>
+        <liveTemplateMacro implementation="net.p35.developersmacro.macro.DevelopersMacro" />
     </extensions>
 </idea-plugin>
