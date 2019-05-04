@@ -1,3 +1,5 @@
+package net.p35.commonenumvalues.config
+
 import com.intellij.openapi.components.*
 import com.intellij.util.xmlb.XmlSerializerUtil
 import java.lang.ref.WeakReference

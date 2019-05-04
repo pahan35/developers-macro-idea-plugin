@@ -1,3 +1,6 @@
+package net.p35.commonenumvalues.config
+
+import ConfigForm
 import com.intellij.openapi.components.ServiceManager
 import com.intellij.openapi.options.Configurable
 import com.intellij.openapi.options.ConfigurationException
