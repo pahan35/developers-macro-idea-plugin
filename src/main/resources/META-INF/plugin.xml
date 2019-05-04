@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>com.grodas.common-enum-values</id>
+    <id>net.p35.common-enum-values</id>
     <name>Common enum values</name>
     <version>0.1.0</version>
     <vendor email="grodas.p35@gmail.com" url="http://zhukov.zzz.com.ua">P35</vendor>
