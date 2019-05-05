@@ -13,7 +13,7 @@ class ConfigService : PersistentStateComponent<Config> {
     private val config = Config()
 
     override fun getState(): Config? = config
-    public fun onChange(f :() -> Unit) = observers.add(WeakReference<() -> Unit>(f))
+    public fun onChange(f :() -> Unit) = observers.add(WeakReference(f))
 
     public fun notifyChange() {
         val it = observers.listIterator()
