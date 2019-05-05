@@ -4,7 +4,10 @@ import com.intellij.openapi.components.*
 import com.intellij.util.xmlb.XmlSerializerUtil
 import java.lang.ref.WeakReference
 
-@Storage("common-enum-values.xml")
+@State(
+        name = "developers-macro",
+        storages = [Storage(file ="developers-macro.xml")]
+)
 class ConfigService : PersistentStateComponent<Config> {
     private val observers : MutableList<WeakReference<() -> Unit>> = arrayListOf()
     private val config = Config()
