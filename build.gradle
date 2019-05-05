@@ -34,5 +34,6 @@ compileTestKotlin {
 }
 patchPluginXml {
     changeNotes """
-      Add Developers live template group with several templates"""
+      Fix missing live template.<br>
+      Fix exception on startup"""
 }
