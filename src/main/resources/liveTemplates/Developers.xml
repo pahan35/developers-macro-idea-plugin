@@ -1,6 +1,6 @@
 <templateSet group="Developers">
     <template name="d"
-              value="[DEVELOPERS]"
+              value="$DEVELOPERS$"
               description="Allow add extra developer in the comment"
               toReformat="false"
               toShortenFQNames="false">
@@ -10,7 +10,7 @@
         </context>
     </template>
     <template name="td"
-              value="// TODO([DEVELOPERS]): "
+              value="// TODO($DEVELOPERS$): "
               description="TODO with developers"
               toReformat="false"
               toShortenFQNames="false">
