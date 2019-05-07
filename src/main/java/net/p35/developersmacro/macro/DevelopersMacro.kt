@@ -19,7 +19,7 @@ class DevelopersMacro : EnumMacro() {
     }
 
     override fun getPresentableName(): String {
-        return "developers(...)"
+        return "developers()"
     }
 
     override fun calculateLookupItems(params: Array<Expression>, context: ExpressionContext?): Array<LookupElement>? {

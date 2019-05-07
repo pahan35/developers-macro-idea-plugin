@@ -1,20 +1,20 @@
 <templateSet group="Developers">
     <template name="d"
-              value="$DEVELOPERS$"
+              value="$developer$"
               description="Allow add extra developer in the comment"
               toReformat="false"
               toShortenFQNames="false">
-        <variable name="DEVELOPERS" expression="developers(...)" defaultValue="" alwaysStopAt="true"/>
+        <variable name="developer" expression="developers()" defaultValue="" alwaysStopAt="true"/>
         <context>
             <option name="OTHER" value="true" />
         </context>
     </template>
     <template name="td"
-              value="// TODO($DEVELOPERS$): "
+              value="// TODO($assignee$): "
               description="TODO with developers"
               toReformat="false"
               toShortenFQNames="false">
-        <variable name="DEVELOPERS" expression="developers(...)" defaultValue="" alwaysStopAt="true"/>
+        <variable name="assignee" expression="developers()" defaultValue="" alwaysStopAt="true"/>
         <context>
             <option name="OTHER" value="true" />
         </context>
