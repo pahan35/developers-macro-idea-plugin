@@ -9,6 +9,39 @@
             <option name="OTHER" value="true" />
         </context>
     </template>
+    <template name="dc" value="$commentStart$ DISCUSS($author$,$author2$): $commentEnd$" description="// DISCUSS($author$,$author2$):" toReformat="false" toShortenFQNames="true">
+        <variable name="commentStart" expression="commentStart()" defaultValue="" alwaysStopAt="false" />
+        <variable name="author" expression="developers()" defaultValue="" alwaysStopAt="true" />
+        <variable name="author2" expression="developers()" defaultValue="" alwaysStopAt="true" />
+        <variable name="commentEnd" expression="commentEnd()" defaultValue="" alwaysStopAt="false" />
+        <context>
+            <option name="OTHER" value="true" />
+        </context>
+    </template>
+    <template name="fm" value="$commentStart$ FIXME($assignee$): $commentEnd$" description="// FIXME($assignee$):" toReformat="false" toShortenFQNames="true">
+        <variable name="commentStart" expression="commentStart()" defaultValue="" alwaysStopAt="false" />
+        <variable name="assignee" expression="developers()" defaultValue="" alwaysStopAt="true" />
+        <variable name="commentEnd" expression="commentEnd()" defaultValue="" alwaysStopAt="false" />
+        <context>
+            <option name="OTHER" value="true" />
+        </context>
+    </template>
+    <template name="rv" value="$commentStart$ REVIEW($assignee$): $commentEnd$" description="Mark code which requires extra attention during review" toReformat="false" toShortenFQNames="true">
+        <variable name="commentStart" expression="commentStart()" defaultValue="" alwaysStopAt="false" />
+        <variable name="assignee" expression="developers()" defaultValue="" alwaysStopAt="true" />
+        <variable name="commentEnd" expression="commentEnd()" defaultValue="" alwaysStopAt="false" />
+        <context>
+            <option name="OTHER" value="true" />
+        </context>
+    </template>
+    <template name="tc" value="$commentStart$ TESTCODE($author$): $commentEnd$" description="Use for marking code which is used for tests or development and should be deleted till deploy" toReformat="false" toShortenFQNames="true">
+        <variable name="commentStart" expression="commentStart()" defaultValue="" alwaysStopAt="false" />
+        <variable name="author" expression="developers()" defaultValue="" alwaysStopAt="true" />
+        <variable name="commentEnd" expression="commentEnd()" defaultValue="" alwaysStopAt="false" />
+        <context>
+            <option name="OTHER" value="true" />
+        </context>
+    </template>
     <template name="td"
               value="$commentStart$ TODO($assignee$): $commentEnd$"
               description="TODO with developers"
