@@ -3,6 +3,7 @@
     <name>Developers macro</name>
     <version>0.2.0</version>
     <vendor email="grodas.p35@gmail.com" url="http://zhukov.zzz.com.ua">P35</vendor>
+    <idea-version since-build="181"/>
 
     <description><![CDATA[
     This plugin allows your to use macro developers() where you need your project developers enum.<br>

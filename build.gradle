@@ -25,6 +25,7 @@ intellij {
     version 'IC-2018.1'
     plugins 'coverage' //Bundled plugin dependencies
     pluginName 'common-enum-values'
+    updateSinceUntilBuild = false
 }
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
