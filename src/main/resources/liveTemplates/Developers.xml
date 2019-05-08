@@ -10,11 +10,13 @@
         </context>
     </template>
     <template name="td"
-              value="// TODO($assignee$): "
+              value="$commentStart$ TODO($assignee$): $commentEnd$"
               description="TODO with developers"
               toReformat="false"
               toShortenFQNames="false">
-        <variable name="assignee" expression="developers()" defaultValue="" alwaysStopAt="true"/>
+        <variable name="commentStart" expression="commentStart()" defaultValue="" alwaysStopAt="false" />
+        <variable name="assignee" expression="developers()" defaultValue="" alwaysStopAt="true" />
+        <variable name="commentEnd" expression="commentEnd()" defaultValue="" alwaysStopAt="false" />
         <context>
             <option name="OTHER" value="true" />
         </context>
