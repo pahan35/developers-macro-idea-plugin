@@ -34,6 +34,6 @@ compileTestKotlin {
 }
 patchPluginXml {
     changeNotes """
-      Fix missing live template.<br>
-      Fix exception on startup"""
+      Relax allowed IDE versions.<br>
+      Add commonly used TODOs live templates"""
 }
