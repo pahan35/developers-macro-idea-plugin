@@ -18,7 +18,7 @@
         <!-- Add your extensions here -->
         <applicationService serviceImplementation="net.p35.developersmacro.config.ConfigService" />
         <applicationConfigurable instance="net.p35.developersmacro.config.ConfigEntry" />
-        <defaultLiveTemplatesProvider implementation="net.p35.developersmacro.livetemplate.DevelopersTemplateProvider"/>
+        <defaultLiveTemplates file="/liveTemplates/Developers"/>
         <liveTemplateMacro implementation="net.p35.developersmacro.macro.DevelopersMacro" />
     </extensions>
 </idea-plugin>
