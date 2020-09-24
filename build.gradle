@@ -22,7 +22,7 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version 'IC-201.3803-EAP-CANDIDATE-SNAPSHOT'
+    version 'IC-2020.1'
     plugins 'coverage' //Bundled plugin dependencies
     pluginName 'common-enum-values'
     updateSinceUntilBuild = false
