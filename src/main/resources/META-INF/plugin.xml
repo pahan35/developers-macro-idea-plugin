@@ -1,9 +1,9 @@
 <idea-plugin>
     <id>net.p35.common-enum-values</id>
-    <name>Developers macro</name>
+    <name>Developers Macro</name>
     <version>0.2.0</version>
-    <vendor email="grodas.p35@gmail.com" url="http://zhukov.zzz.com.ua">P35</vendor>
-    <idea-version since-build="181"/>
+    <vendor email="grodas.p35@gmail.com" url="https://www.linkedin.com/in/pavlo-zhukov-01812427/">Pavlo Zhukov</vendor>
+    <idea-version since-build="201"/>
 
     <description><![CDATA[
     This plugin allows your to use macro developers() where you need your project developers enum.<br>
@@ -18,7 +18,7 @@
         <!-- Add your extensions here -->
         <applicationService serviceImplementation="net.p35.developersmacro.config.ConfigService" />
         <applicationConfigurable instance="net.p35.developersmacro.config.ConfigEntry" />
-        <defaultLiveTemplatesProvider implementation="net.p35.developersmacro.livetemplate.DevelopersTemplateProvider"/>
+        <defaultLiveTemplates file="/liveTemplates/Developers"/>
         <liveTemplateMacro implementation="net.p35.developersmacro.macro.DevelopersMacro" />
     </extensions>
 </idea-plugin>
