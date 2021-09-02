@@ -1,15 +1,14 @@
 package net.p35.developersmacro.config
 
-import com.intellij.openapi.components.ServiceManager
+import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.options.Configurable
 import com.intellij.openapi.options.ConfigurationException
 import org.jetbrains.annotations.Nls
-
 import javax.swing.*
 
 class ConfigEntry : Configurable {
     private var form: ConfigForm? = null
-    private val configService = ServiceManager.getService(ConfigService::class.java)
+    private val configService = ApplicationManager.getApplication().getService(ConfigService::class.java)
     private val config = configService.state!!
 
     @Nls override fun getDisplayName(): String {

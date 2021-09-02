@@ -5,13 +5,13 @@ import com.intellij.codeInsight.lookup.LookupElementBuilder
 import com.intellij.codeInsight.template.Expression
 import com.intellij.codeInsight.template.ExpressionContext
 import com.intellij.codeInsight.template.macro.EnumMacro
-import com.intellij.openapi.components.ServiceManager
+import com.intellij.openapi.application.ApplicationManager
 import net.p35.developersmacro.config.ConfigService
 
 import java.util.ArrayList
 
 class DevelopersMacro : EnumMacro() {
-    private val configService = ServiceManager.getService(ConfigService::class.java)
+    private val configService = ApplicationManager.getApplication().getService(ConfigService::class.java)
     private val config = configService.state!!
 
     override fun getName(): String {
