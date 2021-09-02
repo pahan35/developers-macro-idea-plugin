@@ -16,7 +16,7 @@ class ConfigEntry : Configurable {
         return "Developers"
     }
 
-    override fun getHelpTopic(): String? {
+    override fun getHelpTopic(): String {
         return "Configuration for the Common enum values"
     }
 
