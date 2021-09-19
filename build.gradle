@@ -35,5 +35,10 @@ compileTestKotlin {
 }
 patchPluginXml {
     changeNotes """
-      Update to latest SDK version and get rid of deprecations."""
+      <ol>
+        <li>Get rid of deprecations.</li>
+        <li>Adjust plugin description to follow guidelines.</li>
+        <li>Add mnemonic to form field.</li>
+        <li>Use i18n for the config form.</li>
+      <ol>"""
 }
