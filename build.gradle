@@ -43,3 +43,7 @@ patchPluginXml {
         <li>Use i18n for the config form.</li>
       <ol>"""
 }
+
+publishPlugin {
+    token = System.getenv("ORG_GRADLE_PROJECT_intellijPublishToken")
+}
