@@ -2,6 +2,10 @@ package net.p35.developersmacro.config;
 
 import javax.swing.*;
 
+/*
+    Still in Java because of https://youtrack.jetbrains.com/issue/KTIJ-791.
+    TODO: Convert to Kotlin when fixed
+ */
 public class ConfigForm {
     private JPanel rootPanel;
     private JTextField developersField;
