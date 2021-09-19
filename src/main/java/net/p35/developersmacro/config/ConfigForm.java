@@ -4,18 +4,18 @@ import javax.swing.*;
 
 public class ConfigForm {
     private JPanel rootPanel;
-    private JTextField developers;
+    private JTextField developersField;
 
     public JPanel getRoot() {
         return rootPanel;
     }
 
     public String getDevelopers() {
-        return developers.getText();
+        return developersField.getText();
     }
 
     public void setDevelopers(String developers) {
-        this.developers.setText(developers);
+        this.developersField.setText(developers);
     }
 
     private void createUIComponents() {
