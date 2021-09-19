@@ -6,8 +6,8 @@
     <idea-version since-build="201"/>
 
     <description><![CDATA[
-    This plugin allows your to use macro developers() where you need your project developers enum.<br>
-    You can configure developers list under Developers section in IDE preferences.<br>
+    Allows to use macro <code>developers()</code> in your live templates where you need your project developers' enum.<br>
+    You can configure developers list under <b>Developers</b> section in IDE preferences.<br>
     ]]></description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
