@@ -12,10 +12,10 @@ class ConfigService : PersistentStateComponent<Config> {
     private val observers : MutableList<WeakReference<() -> Unit>> = arrayListOf()
     private val config = Config()
 
-    override fun getState(): Config? = config
-    public fun onChange(f :() -> Unit) = observers.add(WeakReference(f))
+    override fun getState() = config
+    fun onChange(f :() -> Unit) = observers.add(WeakReference(f))
 
-    public fun notifyChange() {
+    fun notifyChange() {
         val it = observers.listIterator()
         while(it.hasNext()) {
             val f = it.next().get()

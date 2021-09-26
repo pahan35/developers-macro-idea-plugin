@@ -8,27 +8,15 @@ import com.intellij.codeInsight.template.macro.EnumMacro
 import com.intellij.openapi.application.ApplicationManager
 import net.p35.developersmacro.config.ConfigService
 
-import java.util.ArrayList
-
 class DevelopersMacro : EnumMacro() {
     private val configService = ApplicationManager.getApplication().getService(ConfigService::class.java)
-    private val config = configService.state!!
+    private val config = configService.state
 
-    override fun getName(): String {
-        return "developers"
-    }
+    override fun getName() = "developers"
 
-    override fun getPresentableName(): String {
-        return "developers()"
-    }
+    override fun getPresentableName() = "developers()"
 
-    override fun calculateLookupItems(params: Array<Expression>, context: ExpressionContext?): Array<LookupElement>? {
-        val developers = ArrayList<LookupElementBuilder>()
-        val devNames = config.developers.split(',')
-        for (devName in devNames) {
-            developers.add(LookupElementBuilder.create(devName))
-        }
-
-        return developers.toTypedArray()
+    override fun calculateLookupItems(params: Array<Expression>, context: ExpressionContext?): Array<LookupElement> {
+        return config.developers.split(',').map { LookupElementBuilder.create(it) }.toTypedArray()
     }
 }

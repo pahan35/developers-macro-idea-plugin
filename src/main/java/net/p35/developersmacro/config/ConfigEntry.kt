@@ -9,15 +9,11 @@ import javax.swing.*
 class ConfigEntry : Configurable {
     private var form: ConfigForm? = null
     private val configService = ApplicationManager.getApplication().getService(ConfigService::class.java)
-    private val config = configService.state!!
+    private val config = configService.state
 
-    @Nls override fun getDisplayName(): String {
-        return "Developers"
-    }
+    @Nls override fun getDisplayName() = "Developers"
 
-    override fun getHelpTopic(): String {
-        return "Configuration for the Common enum values"
-    }
+    override fun getHelpTopic() = "Configuration for the Common enum values"
 
     override fun createComponent(): JComponent? {
         form = ConfigForm()
