@@ -17,7 +17,7 @@
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
         <applicationService serviceImplementation="net.p35.developersmacro.config.ConfigService" />
-        <applicationConfigurable instance="net.p35.developersmacro.config.ConfigEntry" />
+        <applicationConfigurable displayName="Developers" instance="net.p35.developersmacro.config.ConfigEntry" />
         <defaultLiveTemplates file="/liveTemplates/Developers"/>
         <liveTemplateMacro implementation="net.p35.developersmacro.macro.DevelopersMacro" />
     </extensions>
