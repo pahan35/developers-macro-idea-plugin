@@ -34,12 +34,11 @@ compileTestKotlin {
     kotlinOptions.jvmTarget = "17"
 }
 patchPluginXml {
+    sinceBuild.set("231.8109.90")
+    untilBuild.set("241.*")
     changeNotes.set("""
       <ol>
-        <li>Get rid of deprecations.</li>
-        <li>Adjust plugin description to follow guidelines.</li>
-        <li>Add mnemonic to form field.</li>
-        <li>Use i18n for the config form.</li>
+        <li>Limit plugin compatibility to version 2024.1 until the issue is fixed.</li>
       <ol>""")
 }
 
