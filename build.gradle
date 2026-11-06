@@ -1,47 +1,69 @@
 plugins {
-    id 'java-library'
-    id 'org.jetbrains.intellij' version '1.17.4'
-    id 'org.jetbrains.kotlin.jvm' version '1.8.0'
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.9.24'
+    id 'org.jetbrains.intellij.platform' version '2.2.1'
 }
 
 group 'net.p35'
-version "$version" // Plugin version
+version "$version"
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
 repositories {
     mavenCentral()
+    intellijPlatform {
+        defaultRepositories()
+    }
 }
 
 dependencies {
-    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+    intellijPlatform {
+        intellijIdeaCommunity('2024.2.4')
+        pluginVerifier()
+        zipSigner()
+        instrumentationTools()
+    }
+    testImplementation 'junit:junit:4.13.2'
 }
 
-// See https://github.com/JetBrains/gradle-intellij-plugin/
-intellij {
-    version.set('IC-2023.1')
-    pluginName.set('common-enum-values')
-    updateSinceUntilBuild.set(false)
-}
 compileKotlin {
-    kotlinOptions.jvmTarget = "17"
+    kotlinOptions.jvmTarget = "21"
 }
 compileTestKotlin {
-    kotlinOptions.jvmTarget = "17"
-}
-patchPluginXml {
-    sinceBuild.set("231.8109.90")
-    untilBuild.set("241.*")
-    changeNotes.set("""
-      <ol>
-        <li>Limit plugin compatibility to version 2024.1 until the issue is fixed.</li>
-      <ol>""")
+    kotlinOptions.jvmTarget = "21"
 }
 
-publishPlugin {
-    token = System.getenv("ORG_GRADLE_PROJECT_intellijPublishToken")
+intellijPlatform {
+    pluginConfiguration {
+        id = 'net.p35.common-enum-values'
+        name = 'Developers Macro'
+        version = project.version
+
+        ideaVersion {
+            sinceBuild = "242"
+        }
+
+        changeNotes = """
+          <ul>
+            <li>Compatibility with 2024.2+ through 2026.1+ IDEs.</li>
+            <li>Migrated runtime to Java 21.</li>
+            <li>Replaced legacy UI Designer form with Kotlin UI DSL v2.</li>
+          </ul>
+        """
+    }
+
+    publishing {
+        token = providers.environmentVariable("ORG_GRADLE_PROJECT_intellijPublishToken")
+            .orElse(providers.gradleProperty("intellijPublishToken"))
+    }
+
+    pluginVerification {
+        ides {
+            recommended()
+        }
+    }
 }

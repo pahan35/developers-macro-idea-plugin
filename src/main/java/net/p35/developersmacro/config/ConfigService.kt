@@ -1,23 +1,25 @@
 package net.p35.developersmacro.config
 
-import com.intellij.openapi.components.*
+import com.intellij.openapi.components.PersistentStateComponent
+import com.intellij.openapi.components.State
+import com.intellij.openapi.components.Storage
 import com.intellij.util.xmlb.XmlSerializerUtil
 import java.lang.ref.WeakReference
 
 @State(
-        name = "developers-macro",
-        storages = [Storage(file ="developers-macro.xml")]
+    name = "developers-macro",
+    storages = [Storage("developers-macro.xml")]
 )
 class ConfigService : PersistentStateComponent<Config> {
-    private val observers : MutableList<WeakReference<() -> Unit>> = arrayListOf()
+    private val observers: MutableList<WeakReference<() -> Unit>> = arrayListOf()
     private val config = Config()
 
     override fun getState() = config
-    fun onChange(f :() -> Unit) = observers.add(WeakReference(f))
+    fun onChange(f: () -> Unit) = observers.add(WeakReference(f))
 
     fun notifyChange() {
         val it = observers.listIterator()
-        while(it.hasNext()) {
+        while (it.hasNext()) {
             val f = it.next().get()
 
             if (f == null) {

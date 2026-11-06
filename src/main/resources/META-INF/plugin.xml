@@ -1,23 +1,22 @@
 <idea-plugin>
     <id>net.p35.common-enum-values</id>
     <name>Developers Macro</name>
-    <version>0.2.0</version>
     <vendor email="grodas.p35@gmail.com" url="https://www.linkedin.com/in/pavlo-zhukov-01812427/">Pavlo Zhukov</vendor>
-    <idea-version since-build="201"/>
 
     <description><![CDATA[
     Allows to use macro <code>developers()</code> in your live templates where you need your project developers' enum.<br>
     You can configure developers list under <b>Developers</b> section in IDE preferences.<br>
     ]]></description>
 
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-         on how to target different products -->
     <depends>com.intellij.modules.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
         <applicationService serviceImplementation="net.p35.developersmacro.config.ConfigService" />
-        <applicationConfigurable displayName="Developers" instance="net.p35.developersmacro.config.ConfigEntry" />
+        <applicationConfigurable
+            parentId="tools"
+            id="net.p35.developersmacro.config.ConfigEntry"
+            displayName="Developers"
+            instance="net.p35.developersmacro.config.ConfigEntry" />
         <defaultLiveTemplates file="/liveTemplates/Developers"/>
         <liveTemplateMacro implementation="net.p35.developersmacro.macro.DevelopersMacro" />
     </extensions>

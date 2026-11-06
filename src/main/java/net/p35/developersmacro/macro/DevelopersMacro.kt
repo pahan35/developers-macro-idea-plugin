@@ -9,14 +9,18 @@ import com.intellij.openapi.application.ApplicationManager
 import net.p35.developersmacro.config.ConfigService
 
 class DevelopersMacro : EnumMacro() {
-    private val configService = ApplicationManager.getApplication().getService(ConfigService::class.java)
-    private val config = configService.state
-
     override fun getName() = "developers"
 
     override fun getPresentableName() = "developers()"
 
     override fun calculateLookupItems(params: Array<Expression>, context: ExpressionContext?): Array<LookupElement> {
-        return config.developers.split(',').map { LookupElementBuilder.create(it) }.toTypedArray()
+        val configService = ApplicationManager.getApplication().getService(ConfigService::class.java)
+        val config = configService?.state ?: return emptyArray()
+        return config.developers
+            .split(',')
+            .map { it.trim() }
+            .filter { it.isNotEmpty() }
+            .map { LookupElementBuilder.create(it) }
+            .toTypedArray()
     }
 }
